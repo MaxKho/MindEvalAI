@@ -1,0 +1,8 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+
+# SQLite or CSV data files
+emails.csv
+emails.db
+
