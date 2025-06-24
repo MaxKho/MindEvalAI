@@ -3,8 +3,12 @@ import os
 import csv
 import io
 from supabase import create_client, Client
+from dotenv import load_dotenv
+from postgrest.exceptions import APIError
 
 app = Flask(__name__)
+
+load_dotenv(".env")
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
@@ -15,10 +19,23 @@ if SUPABASE_URL and SUPABASE_KEY:
 
 
 def append_email(email: str) -> None:
-    """Insert a new email into the Supabase table."""
     if not supabase:
+        app.logger.error("Supabase client not configured")
         return
-    supabase.table("emails").insert({"email": email}).execute()
+
+    try:
+        res = supabase.table("emails") \
+                       .insert({"email": email}) \
+                       .execute()
+        # res.data always exists on success
+        app.logger.info(f"Inserted {email!r}, response data={res.data}")
+    except APIError as e:
+        # catches constraint, RLS, key-errors, etc.
+        app.logger.error(f"Supabase insert failed: {e}")
+    except Exception as e:
+        # anything else unexpected
+        app.logger.error(f"Unexpected error on insert: {e}")
+
 
 
 @app.route("/")
