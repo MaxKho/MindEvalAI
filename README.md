@@ -2,6 +2,11 @@
 
 This repository contains a simple Flask application that serves a landing page for **AI Tailor**, a free personalized AI service. Visitors can join the waitlist by submitting their email address, which is stored in a Supabase table.
 
+## Built Using
+- Flask (for the landing page)
+- Supabase Database (to save emails)
+- Render (to host the website)
+
 ## Features
 
 - Modern responsive design using Bootstrap
