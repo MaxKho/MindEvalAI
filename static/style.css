@@ -12,9 +12,8 @@ body {
     padding-bottom: 7rem;
 }
 
-.feature {
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    transform: translateY(40px);
+.feature 
+    opacity: 0;
 }
 
 .feature.show {
@@ -30,4 +29,8 @@ body {
 .btn-primary:hover {
     background-color: #0b5ed7;
     border-color: #0a58ca;
+}
+
+#signup {
+    scroll-margin-top: 80px;
 }
