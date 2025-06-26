@@ -1,6 +1,6 @@
-# AI Tailor Landing Page
+# MindEval.ai Landing Page
 
-This repository contains a simple Flask application that serves a landing page for **AI Tailor**, a free personalized AI service. Visitors can join the waitlist by submitting their email address, which is stored in a Supabase table.
+This repository contains a simple Flask application that serves a landing page for **MindEval.ai**, an AI-driven chess coach. Visitors can join the waitlist by submitting their email address, which is stored in a Supabase table.
 
 ## Built Using
 - Flask (for the landing page)
