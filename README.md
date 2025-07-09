@@ -28,7 +28,7 @@ pip install Flask supabase
 
 ## Configuration
 
-Set the following environment variables with your Supabase credentials before running the app:
+Set the following environment variables with your Supabase credentials before running the app.
 
 - `SUPABASE_URL` – your project URL
 - `SUPABASE_KEY` – service role or anon key with insert/select permissions
